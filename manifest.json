@@ -1,0 +1,32 @@
+{
+    "manifest_version": 3,
+    "name": "Publica Atualização Google Meu Negócio",
+    "version": "1.0",
+    "description": "Extensão para calcular criar publicações no Google Meu Negócio.",
+    "side_panel": {
+      "default_path": "popup.html"
+    },
+    "permissions": ["storage", "activeTab", "scripting", "runtime", "sidePanel", "tabs"],
+    "host_permissions": [
+      "*://*/*"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": "meu-negocio.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "open_page": "popup.html",
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>"
+        ],
+        "js": [
+          "popup.js"
+        ]
+      }
+    ]
+}
+  
